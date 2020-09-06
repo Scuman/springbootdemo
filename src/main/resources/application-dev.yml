@@ -1,0 +1,19 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://mysql.scuman.online:3306/springbootdemo?useSSL=true&characterEncoding=UTF-8
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      password: 111
+      initial-size: 5
+      min-idle: 1
+      max-active: 100
+      # 申请连接的时候检测，如果空闲时间大于timeBetweenEvictionRunsMillis，执行validationQuery检测连接是否有效。
+      testWhileIdle: true
+      timeBetweenEvictionRunsMillis: 600000
+      validationQuery: select 1
+      minEvictableIdleTimeMillis: 3600000
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
